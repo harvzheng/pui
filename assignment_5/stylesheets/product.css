@@ -1,0 +1,93 @@
+main.product {  
+  width: 80%;
+  margin: auto;
+}
+.product-details {
+  display:flex;
+  justify-content: space-around;
+}
+
+.details {
+  width: 50%;
+  margin: 30px;
+}
+.details div {
+  margin: 8px 0;
+}
+
+.flavors {
+  display:flex;
+  flex-direction: row;
+}
+
+.flavors form {
+  display:flex;
+}
+.flavors .flavor-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 8px;
+}
+.flavors .flavor-group input{
+  width: 30px;
+  height: 30px;
+}
+
+input.flavor:checked {
+  outline: 3px solid #FD876D;
+}
+
+.flavors .flavor-group label {
+  font-size: 14px;
+}
+
+.pricing {
+  display: flex;
+  align-items: center;
+}
+
+.pricing p{
+  font-size: 24px;
+  margin-right: 18px;
+}
+
+#bottles {
+  width: 48px;
+}
+#green-apple {
+  -webkit-appearance: none;
+  background-color: #1bcc56;
+}
+
+#blue {
+  -webkit-appearance: none;
+  background-color: #1b8bcc;
+}
+
+#pink {
+  -webkit-appearance: none;
+  background-color: #f07edd;
+}
+#red {
+  -webkit-appearance: none;
+  background-color: #d33d3d;
+}
+
+.review {
+  border: 3px solid #00A1C5;
+  padding: 16px;
+}
+
+.details .product-image {
+  width: 100%
+}
+
+.review .title {
+  font-weight: 600;
+  font-size: 16px;
+}
+.review .author {
+  font-size: 14px;
+  font-style: italic;
+}

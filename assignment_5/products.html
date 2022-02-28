@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Spearhead Drink</title>
+    <script src="/javascripts/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/products.css">
+  </head>
+  <body>
+    <nav>
+      <img class="logo" src="assets/spear.svg"/>
+      <h2>
+        <a class="logo-text" href="../assignment_5/index.html">SPEARHEAD</a>
+      </h2>
+      <a class="nav-item" href="products.html">Energy Drinks</a>
+      <a class="nav-item" href="#">Nutrition Bars</a>
+    </nav>
+    <main class="container">
+
+      <div class="filter-container">
+        <h2>Filters</h2>
+        <div class="filter filter-checkbox">
+          <input type="checkbox" id="protein" name="protein" value="protein">
+          <label for="protein">Protein</label>
+        </div>
+        <div class="filter filter-checkbox">
+          <input type="checkbox" id="meal" name="meal" value="meal">
+          <label for="meal">Meal Replacement</label>
+        </div>
+        <div class="filter filter-checkbox">
+          <input type="checkbox" id="recovery" name="recovery" value="recovery">
+          <label for="recovery">Recovery</label>
+        </div>
+        <div class="filter filter-slider">
+          <label for="points">Price Range:</label>
+          <input type="range" min="1" max="10" value="1">
+        </div>
+        <div class="btn">Apply</div>
+      </div>
+      <div class="product-container">
+        <h2 class="title product-showcase">ENERGY DRINKS</h2>
+        <div class="products">
+          
+          <div class="product-showcase">
+            <img class="product-thumbnail" src="assets/product-hyper.png"/>
+            <div class="product-text">
+              <div>
+                HYPER FUEL
+              </div>
+              <div>
+                $4
+              </div>
+            </div>
+          </div>
+          <div class="product-showcase">
+            <img class="product-thumbnail" src="assets/product-ultra.png"/>
+            <div class="product-text">
+              <div>
+                ULTRA FUEL
+              </div>
+              <div>
+                $4
+              </div>
+            </div>
+          </div>
+          <div class="product-showcase">
+            <a href="product1.html">
+              <img class="product-thumbnail" src="assets/product-green.png"/>
+            </a>
+            <div class="product-text">
+              <div>
+                GREEN FUEL
+              </div>
+              <div>
+                $4
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+    <footer>
+      <p>SPEARHEAD DRINKS 2022</p>
+    </footer>
+  </body>
+</html>

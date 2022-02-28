@@ -1,0 +1,60 @@
+main.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-container {
+  display:flex;
+  flex-direction: column;
+}
+
+.products {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+}
+.title{
+  font-weight: 600;
+}
+.product-showcase {
+  padding: 18px 30px;
+}
+.product-thumbnail {
+  border: 4px solid #00A1C5;
+  width: 300px;
+  height: 300px;
+  background-color: white;
+}
+.product-text {
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between;
+}
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 30px;
+}
+
+.filter-container .filter {
+  padding: 8px 0;
+}
+
+.filter-container .filter label{
+  font-size: 18px;
+}
+
+.filter-container .filter-checkbox{
+  display:flex;
+  align-items: center;
+}
+.filter-container .filter-checkbox input{
+  margin-right: 8px;
+  outline: 1px #00A1C5 solid;
+  background-color: white;
+}
+
+.filter-container .filter-slider {
+  display:flex;
+  flex-direction: column;
+}
