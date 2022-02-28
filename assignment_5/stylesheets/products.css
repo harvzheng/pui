@@ -1,7 +1,13 @@
+/*
+This folder contains the CSS for the product browsing page,
+i.e. elements pertaining to the list of products and the filters
+*/
 main.container {
   display: flex;
   flex-direction: row;
 }
+
+/* Product list styling */
 
 .product-container {
   display:flex;
@@ -30,6 +36,8 @@ main.container {
   font-weight: 600;
   justify-content: space-between;
 }
+
+/* filter styling */
 .filter-container {
   display: flex;
   flex-direction: column;

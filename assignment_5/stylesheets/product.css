@@ -1,3 +1,8 @@
+/* 
+This file is mostly for an individual product's detail
+*/
+
+/* General page/container styling*/
 main.product {  
   width: 80%;
   margin: auto;
@@ -14,6 +19,8 @@ main.product {
 .details div {
   margin: 8px 0;
 }
+
+/* flavor selector styling */
 
 .flavors {
   display:flex;
@@ -42,6 +49,8 @@ input.flavor:checked {
   font-size: 14px;
 }
 
+/* price row styling */
+
 .pricing {
   display: flex;
   align-items: center;
@@ -55,6 +64,8 @@ input.flavor:checked {
 #bottles {
   width: 48px;
 }
+
+/* styling of flavors/boxes */
 #green-apple {
   -webkit-appearance: none;
   background-color: #1bcc56;
@@ -74,6 +85,7 @@ input.flavor:checked {
   background-color: #d33d3d;
 }
 
+/* styling of right side of page */
 .review {
   border: 3px solid #00A1C5;
   padding: 16px;
