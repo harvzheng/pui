@@ -60,6 +60,9 @@ main.container {
   margin-right: 8px;
   outline: 1px #00A1C5 solid;
   background-color: white;
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
 }
 
 .filter-container .filter-slider {
