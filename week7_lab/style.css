@@ -7,9 +7,20 @@
 
 .zoo-container img {
   max-width: 500px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
   border: 3px solid rgb(0, 73, 168);
+  padding: 30px;
+}
+
+.margin-30{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.margin-15{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .zoo-container img:hover {

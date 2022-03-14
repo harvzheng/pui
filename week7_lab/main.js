@@ -18,7 +18,7 @@ function Hamster(name, age) {
 }
 
 animal = [new Panda("Po", 6), new Goose("Chucky", 4), new Hamster("Buster", 2)]
-animal_names = ["Joe", "Jackson", "Jarles", "Jamie"]
+animal_names = ["Joe", "Jackson", "Jarles", "Jamie", "Julian", "Jayden", "John"]
 
 function generateRandomIndex(maxIndex) {
   return Math.floor(Math.random() * maxIndex)
@@ -57,6 +57,10 @@ function loadNewAnimal() {
   var img = document.getElementById("animal_image")
   img.setAttribute("src", animal.image)
   img.setAttribute("alt", animal.image_alt)
-  title.innerHTML = animal.name
-  text.innerHTML = animal.age + " years old"
+  title.innerHTML = animal.name + " the " + animal.constructor.name
+  if (animal.age === 1) {
+    text.innerHTML = animal.age + " year old "
+  } else {
+    text.innerHTML = animal.age + " years old "
+  }
 }
