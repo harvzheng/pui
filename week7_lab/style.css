@@ -1,0 +1,21 @@
+.zoo-container h1{
+  text-align: center;
+}
+.zoo-container p{
+  text-align: center;
+}
+
+.zoo-container img {
+  max-width: 500px;
+  margin: auto;
+  display: block;
+  border: 3px solid rgb(0, 73, 168);
+}
+
+.zoo-container img:hover {
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+}

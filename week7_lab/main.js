@@ -29,7 +29,9 @@ function generateRandomName() {
 }
 
 function generateRandomAge(maxAge = 10) {
-  return generateRandomIndex(maxAge)
+  floor = 1
+  ceiling = maxAge
+  return generateRandomIndex(maxAge - floor) + floor
 }
 
 function generateRandomAnimal(maxIndex) {
@@ -45,6 +47,10 @@ function generateRandomAnimal(maxIndex) {
 }
 
 function onLoad() {
+  loadNewAnimal()
+}
+
+function loadNewAnimal() {
   var animal = generateRandomAnimal()
   var text = document.getElementById("animal_text")
   var title = document.getElementById("animal_name")
@@ -52,5 +58,5 @@ function onLoad() {
   img.setAttribute("src", animal.image)
   img.setAttribute("alt", animal.image_alt)
   title.innerHTML = animal.name
-  text.innerHTML = animal.age
+  text.innerHTML = animal.age + " years old"
 }
