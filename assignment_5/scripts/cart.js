@@ -45,7 +45,7 @@ function updateBottles() {
 }
 
 function addToCart() {
-  order = new Order(subscription, num_bottles, price)
+  order = new Order(flavor, subscription, num_bottles, price)
   updateCart(order)
   console.log(order)
 }
