@@ -3,18 +3,26 @@
 <html>
   <head>
     <title>Green Fuel | Spearhead Drink</title>
-    <script src="/javascripts/script.js"></script>
+    <script type="text/javascript" src="scripts/cart.js"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/product.css">
   </head>
   <body>
     <nav>
-      <img class="logo" src="assets/spear.svg" alt="spear shaped logo"/>
-      <h2>
-        <a class="logo-text" href="/assignment_5/index.html">SPEARHEAD</a>
-      </h2>
-      <a class="nav-item" href="products.html">Energy Drinks</a>
-      <a class="nav-item" href="#">Nutrition Bars</a>
+      <div class="nav-left">
+        <img class="logo" src="assets/spear.svg" alt="spear shaped logo"/>
+        <h2>
+          <a class="logo-text" href="/assignment_5/index.html">SPEARHEAD</a>
+        </h2>
+        <a class="nav-item" href="products.html">Energy Drinks</a>
+        <a class="nav-item" href="#">Nutrition Bars</a>
+      </div>
+      <div class="nav-right">
+        <a href="cart.html">
+          <img src="assets/cart.svg" id="cart" alt="shopping cart"/>
+          <span class="cart-empty" id="cart-number">0</span>
+        </a>
+      </div>
     </nav>
     <main class="product">
       <div class="product-details">
@@ -28,31 +36,38 @@
             <p>What flavor?</p>
             <form>
               <div class="flavor-group">
-                <input class="flavor" type="checkbox" id="green-apple" label="green-apple">
+                <input class="flavor" type="radio" id="green-apple" label="green-apple" name="flavor" onclick="handleFlavor(0)">
                 <label for="green-apple">Green Apple</label>
               </div>
               <div class="flavor-group">
-                <input class="flavor" type="checkbox" id="red" label="red">
-                <label for="red"></label>
+                <input class="flavor" type="radio" id="red" label="red" name="flavor" onclick="handleFlavor(1)">
+                <label for="red">Strawberry</label>
               </div>
               <div class="flavor-group">
-                <input class="flavor" type="checkbox" id="pink" label="pink">
-                <label for="pink"></label>
+                <input class="flavor" type="radio" id="pink" label="pink" name="flavor" onclick="handleFlavor(2)">
+                <label for="pink">Pink Lemonade</label>
               </div>
               <div class="flavor-group">
-                <input class="flavor" type="checkbox" id="blue" label="blue">
-                <label for="blue"></label>
+                <input class="flavor" type="radio" id="blue" label="blue" name="flavor" onclick="handleFlavor(3)">
+                <label for="blue">Glacier</label>
               </div>
             </form>
           </div>
           <div>
-            <label for="bottles">How many bottles a month?</label>
-            <input type="text" id="bottles" label="bottles" maxlength="3">
+            <label for="subscription">Subscription?</label>
+            <input type="checkbox" id="subscription" label="subscription" checked onchange="handleSubscription()">
+          </div>
+          <div>
+            <label for="bottles">How many bottles<span id="sub-bottles"> a month</span>?</label>
+            <input type="text" id="bottles" label="bottles" maxlength="3" value="1" onchange="handleBottles()">
           </div>
           <div class="pricing">
-            <p>$12/month</p>
-            <div class="btn">Add to cart</div>
+            <p><span id="total-price">$4</span><span id="sub-price">/month</span></p>
           </div>
+          <div>
+            <span>Unit price: $4/bottle</span>
+          </div>
+          <div class="btn" id="add-to-cart" onclick="addToCart()">Add to cart</div>
           <div class="nutrition">
             <p>
               <strong>Nutrition Information:</strong>

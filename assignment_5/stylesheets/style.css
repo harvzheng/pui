@@ -3,38 +3,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* Navigation */
-
 nav {
-  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
   background: #fd866d;
+}
+
+nav div {
+  padding: 20px 30px;
   color: #ecf0f1;
   display: flex;
   align-items: center;
 }
 
-nav .logo {
+nav div .logo {
   padding-right: 12px;
 }
 
-nav a {
+nav div a {
   color: #ecf0f1;
   text-transform: uppercase;
 }
 
-nav a .logo-text {
+nav div a .logo-text {
   font-weight: 600;
 }
 
-nav h2 {
+nav div h2 {
   color: #ecf0f1;
 }
 
-nav img {
+nav div img {
   height: 24px;
 }
 
 .nav-item {
   padding-left: 60px;
+}
+
+#cart {
+  filter: invert(1);
+  height: 30px;
+}
+
+.cart-empty {
+  display: none !important;
+}
+
+.not-visible {
+  display: none !important;
+}
+
+#cart-number {
+  height: 24px;
+  width: 24px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  margin-left: -4px;
 }
 
 /* Headings */
@@ -69,6 +97,9 @@ h3 {
 }
 
 /* General use selectors */
+main.container {
+  padding: 60px;
+}
 .row {
   display: flex;
   padding: 15px 30px;
@@ -76,12 +107,26 @@ h3 {
 
 .flex-column {
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
+}
+.flex-row {
+  display:flex;
+  flex-direction: row;
+}
+
+.row-reverse {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
 }
 
 .justify-evenly {
   display: flex;
   justify-content: space-evenly;
+}
+.space-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 .col-6 {
@@ -99,6 +144,14 @@ h3 {
   cursor: pointer;
 }
 
+.no-margin {
+  margin: 0;
+}
+
+.pull-left {
+  margin-left: auto;
+}
+
 .btn.centered{
   margin: auto;
 }
@@ -114,6 +167,22 @@ footer {
   color: #ecf0f1;
 }
 
+.bold {
+  font-weight: 700;
+}
+.semi-bold {
+  font-weight: 600;
+}
+
+hr {
+  border: 0.5px solid #00A1C5;
+}
+
+.margin-vertical-15 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 body {
   height: 100VH;
   background: #fff;
@@ -123,4 +192,8 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   text-decoration: none;
+}
+
+input{
+  vertical-align: middle;
 }

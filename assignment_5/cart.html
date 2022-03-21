@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Spearhead Drink</title>
+    <script src="/javascripts/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/cart.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/products.css">
+  </head>
+  <body>
+    <nav>
+      <img class="logo" src="assets/spear.svg" alt="spear shaped logo"/>
+      <h2>
+        <a class="logo-text" href="index.html">SPEARHEAD</a>
+      </h2>
+      <a class="nav-item" href="products.html">Energy Drinks</a>
+      <a class="nav-item" href="#">Nutrition Bars</a>
+    </nav>
+    <main class="container flex-column">
+      <div class="row">
+        <h1>YOUR CART</h1>
+      </div>
+        <div class="row blue-border flex-column">
+          <div class="flex-row space-between margin-vertical-15">
+            <div class="flex-row">
+              <img src="assets/product-green.png" class="cart-thumbnail"/>
+              <h1 class="semi-bold">GREEN FUEL</h1>
+            </div>
+            <div class="item-pricing flex-column space-between">
+              <div>
+                <p>
+                  <select name="number" id="number">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  </select>
+                  bottles/month
+                </p>
+                <p>$4/bottle</p>
+                <p class="bold">Total: $48/month</p>
+              </div>
+              <a href="" id="">Delete</a>
+            </div>
+          </div>
+          <hr>
+          <div class="row-reverse margin-vertical-15">
+            <div class="flex-column">
+              <div class="item-pricing">
+                <p>Subtotal: $48.00</p>
+                <p>Tax: $3.00</p>
+                <p class="bold">Total: $51.00</p>
+              </div>
+              <div class="btn no-margin pull-left">Check out</div>
+            </div>
+          </div>  
+        </div>
+
+    </main>
+    <footer>
+      <p>SPEARHEAD DRINKS 2022</p>
+    </footer>
+  </body>
+</html>
