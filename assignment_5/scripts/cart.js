@@ -1,62 +1,70 @@
-var subscription = true
-var num_bottles = 1
-var total = 0
-var price = 4
-var flavor = "green apple"
-const flavors = ["green apple", "strawberry", "pink lemonade", "glacier"]
-const flavor_images = ["assets/product-green.png", "assets/green-red.jpg", "assets/green-pink.webp", "assets/green-blue.jpg"]
-
-function Order(flavor, subscription, num_bottles, unit_price) {
-  this.flavor = flavor
-  this.subscription = subscription
-  this.num_bottles = num_bottles
-  this.unit_price = unit_price
+cart = []
+function handleLoad() {
+  cart = JSON.parse(localStorage.getItem("cart"))
+  loadCartHTML()
 }
 
-function handleFlavor(i) {
-  flavor = flavors[i]
-  product_image = document.querySelector(".product-image")
-  product_image.src = flavor_images[i]
+function deleteItem(i) {
+  cart.splice(i, 1)
+  updateCart()
+  loadCartHTML()
 }
 
-function handleSubscription() {
-  subscription = document.querySelector("#subscription").checked
-  updateSubscription()
-}
-function handleBottles() {
-  num_bottles = parseInt(document.querySelector("#bottles").value)
-  updateBottles()
-}
-function updateSubscription () {
-  let sub_bottles = document.querySelector("#sub-bottles")
-  let sub_price = document.querySelector("#sub-price")
-  if (!subscription) {
-    sub_bottles.classList.add('not-visible')
-    sub_price.classList.add('not-visible')
-  } else {
-    sub_bottles.classList.remove('not-visible')
-    sub_price.classList.remove('not-visible')
-  }
+function updateCart() {
+  localStorage.setItem("cart", JSON.stringify(cart))
 }
 
-function updateBottles() {
-  let sub_price = document.querySelector("#total-price")
-  sub_price.innerHTML = "$" + price*num_bottles
-}
-
-function addToCart() {
-  order = new Order(flavor, subscription, num_bottles, price)
-  updateCart(order)
-  console.log(order)
-}
-
-function updateCart(order) {
+function updateCartCounter() {
   let cart_count = document.querySelector("#cart-number")
-  let current_count = parseInt(cart_count.innerHTML)
-  if (current_count + order.num_bottles > 0) {
-    cart_count.innerHTML = current_count + order.num_bottles
+  let current_count = 0
+  for (let i = 0; i < cart.length; i++) {
+    current_count += cart[i].num_bottles
+  }
+  if (current_count> 0) {
+    cart_count.innerHTML = current_count
     cart_count.classList.remove('cart-empty')
   } else {
     cart_count.classList.add('cart-empty')
   }
+}
+
+function loadCartHTML() {
+  let container = document.querySelector("#cart-container")
+  updateCartCounter()
+  container.innerHTML = ""
+  let i = 0
+  let price = 0
+  for (const item of cart) {
+    var newItem = document.createElement("div")
+    let hr = document.createElement("hr")
+    newItem.id = "item_" + i
+    price += item.unit_price * item.num_bottles
+    newItem.innerHTML = `
+      <div class="flex-row">
+        <img src="${item.image_url}" class="cart-thumbnail"/>
+        <div class="flex-column">
+          <h1 class="semi-bold">GREEN FUEL</h1>
+          <p>Flavor: ${item.flavor.charAt(0).toUpperCase() + item.flavor.slice(1)}</p>
+        </div>
+      </div>
+      <div class="item-pricing flex-column space-between">
+        <div>
+          <p>
+          <input type="text" id="bottles" label="bottles" maxlength="3" value="${item.num_bottles}">
+            bottles/month
+          </p>
+          <p>$${item.unit_price}/bottle</p>
+          <p class="bold">Total: $${item.unit_price * item.num_bottles}/month</p>
+        </div>
+        <button type="button" id="delete_${i}" onclick=deleteItem(${i})>Delete</button>
+      </div>
+    `
+    newItem.classList.add("flex-row", "space-between", "margin-vertical-15")
+    container.appendChild(newItem)
+    container.appendChild(hr)
+    i ++
+  }
+  document.querySelector("#subtotal").innerHTML = "Subtotal: $" + price.toFixed(2)
+  document.querySelector("#tax").innerHTML = "Tax: $" + (price*0.05).toFixed(2)
+  document.querySelector("#total").innerHTML = "Total: $" + (price*1.05).toFixed(2)
 }
