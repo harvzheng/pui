@@ -1,3 +1,9 @@
+
+.zoo-container {
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+}
 .zoo-container h1{
   text-align: center;
 }
