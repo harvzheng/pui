@@ -3,12 +3,12 @@
 <html>
   <head>
     <title>Spearhead Drink</title>
-    <script src="/javascripts/script.js"></script>
+    <script src="scripts/cart.js"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/cart.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/products.css">
   </head>
-  <body>
+  <body onload="handleLoad()">
     <nav>
       <div class="nav-left">
         <img class="logo" src="assets/spear.svg" alt="spear shaped logo"/>
@@ -30,33 +30,14 @@
         <h1>YOUR CART</h1>
       </div>
         <div class="row blue-border flex-column">
-          <div class="flex-row space-between margin-vertical-15">
-            <div class="flex-row">
-              <img src="assets/product-green.png" class="cart-thumbnail"/>
-              <h1 class="semi-bold">GREEN FUEL</h1>
-            </div>
-            <div class="item-pricing flex-column space-between">
-              <div>
-                <p>
-                  <select name="number" id="number">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                  </select>
-                  bottles/month
-                </p>
-                <p>$4/bottle</p>
-                <p class="bold">Total: $48/month</p>
-              </div>
-              <a href="" id="">Delete</a>
-            </div>
+          <div id="cart-container">
           </div>
-          <hr>
           <div class="row-reverse margin-vertical-15">
             <div class="flex-column">
               <div class="item-pricing">
-                <p>Subtotal: $48.00</p>
-                <p>Tax: $3.00</p>
-                <p class="bold">Total: $51.00</p>
+                <p id="subtotal">Subtotal: $48.00</p>
+                <p id="tax">Tax: $3.00</p>
+                <p id="total" class="bold">Total: $51.00</p>
               </div>
               <div class="btn no-margin pull-left">Check out</div>
             </div>

@@ -3,7 +3,7 @@
 }
 
 .cart-thumbnail {
-  height: 160px;
+  /* height: 160px; */
   width: 160px;
   border: 4px solid #00A1C5;
   margin-right: 12px;
@@ -21,4 +21,8 @@
 
 .item-pricing select{
   vertical-align: middle;
+}
+
+#bottles {
+  width: 20px;
 }

@@ -80,6 +80,8 @@ function updateCartCounter() {
 }
 /* used from https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload */
 window.onload = function() {
-  cart = JSON.parse(localStorage.getItem("cart"))
-  updateCartCounter()
+  if(localStorage.getItem("cart") != null) {
+    cart = JSON.parse(localStorage.getItem("cart"))
+    updateCartCounter()
+  }
 }
